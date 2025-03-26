@@ -1,8 +1,10 @@
 const express = require("express");
 const connectDB = require("./config/db");
 require("dotenv").config();
+const User = require("./models/user");
 
 const app = express();
+app.use(express.json());
 
 connectDB()
   .then(() => {
@@ -13,3 +15,14 @@ connectDB()
     );
   })
   .catch(() => console.error("DB connection error"));
+
+app.post("/api/signup", async (req, res) => {
+  try {
+    //   await User.insertOne(req.body);
+    const user = new User(req.body);
+    user.save();
+    res.send("User is registered succcessfully!!");
+  } catch (error) {
+    res.status(400).send("Error while registering user")
+  }
+});
