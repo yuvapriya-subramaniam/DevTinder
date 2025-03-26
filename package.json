@@ -1,0 +1,18 @@
+{
+  "name": "devtinder",
+  "version": "1.0.0",
+  "description": "Tinder app for Developers",
+  "license": "ISC",
+  "author": "Yuvapriya Subramaniam",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src/app.js",
+    "start": "src/app.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "mongoose": "^8.13.0"
+  }
+}
